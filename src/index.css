@@ -5,19 +5,26 @@
 body {
   font-family: sans-serif;
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
+/* Main container */
 .steps {
   width: 600px;
+  max-width: 95%;
   background-color: #f7f7f7;
   border-radius: 7px;
-  padding: 25px 100px;
-  margin: 100px auto;
+  padding: 25px 40px;
+  margin: 50px auto;
 }
 
+/* Number circles */
 .numbers {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .numbers > div {
@@ -29,6 +36,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 18px;
+  min-width: 40px;
 }
 
 .numbers .active {
@@ -36,12 +44,12 @@ body {
   color: #fff;
 }
 
+/* Message */
 .message {
   text-align: center;
   font-size: 20px;
-  margin: 40px 0;
+  margin: 30px 0;
   font-weight: bold;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,6 +58,8 @@ body {
 .buttons {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .buttons button {
@@ -59,10 +69,11 @@ body {
   border-radius: 10px;
   font-size: 14px;
   font-weight: bold;
-
   display: flex;
   align-items: center;
   gap: 10px;
+  flex: 1;
+  min-width: 120px;
 }
 
 .buttons button span {
@@ -76,7 +87,6 @@ h3 {
 }
 
 .close {
-  /* position: absolute; */
   top: 16px;
   right: 16px;
   border: none;
@@ -88,4 +98,45 @@ h3 {
 
 .close:hover {
   color: #7950f2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .steps {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .message {
+    font-size: 18px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps {
+    padding: 15px;
+  }
+
+  .numbers {
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .numbers > div {
+    font-size: 14px;
+    height: 30px;
+  }
+
+  .message {
+    font-size: 16px;
+  }
 }
